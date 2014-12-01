@@ -28,7 +28,6 @@ home_dir=ENV['HOME']
 file="#{home_dir}/Google Drive/.gitshots/#{repo_name}_#{Time.now.to_i}.jpg"
 unless File.directory?(File.expand_path("../../rebase-merge", __FILE__))
   puts "Taking capture into #{file}!"
-  puts "Shell Escaped: #{shellescape(file)}!"
   system "imagesnap -q -w 1 #{shellescape(file)} &"
 end
 
