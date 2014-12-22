@@ -25,7 +25,7 @@ end
 repo_name=`basename $(git rev-parse --show-toplevel)`
 repo_name.chomp!
 home_dir=ENV['HOME']
-file="#{home_dir}/Google Drive/.gitshots/#{repo_name}_#{Time.now.to_i}.jpg"
+file="#{home_dir}/Google Drive/.gitshots/#{Time.now.to_i}_#{repo_name}.jpg"
 unless File.directory?(File.expand_path("../../rebase-merge", __FILE__))
   puts "Taking capture into #{file}!"
   system "imagesnap -q -w 1 #{shellescape(file)} &"
